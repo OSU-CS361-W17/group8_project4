@@ -17,13 +17,16 @@ background-color:blue;
 }
 
 table, th, td {
-   border: 1px solid black;
+    border: 1px solid black;
     text-align: center;
     color: white;
 }
+td:first-child, tr:first-child td{
+    background: #23bca5;
+}
 
 #MyBoard .ship{
-background-color: orange;
+    background-color: orange;
 }
 
 /*
