@@ -18,6 +18,8 @@ background-color:blue;
 
 table, th, td {
    border: 1px solid black;
+    text-align: center;
+    color: white;
 }
 
 #MyBoard .ship{
