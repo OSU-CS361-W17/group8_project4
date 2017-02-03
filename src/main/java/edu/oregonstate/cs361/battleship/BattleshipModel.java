@@ -29,6 +29,7 @@ public class BattleshipModel {
     public ArrayList<Point> computerHits;
     public ArrayList<Point> computerMisses;
 
+    public BattleshipModel() {
     //Default start and end constructs
     Point us = new Point(0,0);
     Point ue = new Point(0,0);
@@ -44,13 +45,12 @@ public class BattleshipModel {
     computer_cruiser = new Ship("Computer_Cruiser", 3, new Point(4,1), new Point(4,4));
     computer_destroyer = new Ship("Computer_Destroyer", 2, new Point(7,3), new Point(7,5));
     computer_submarine = new Ship("Computer_Submarine", 2, new Point(9,6), new Point(9,8)
-
     );
 
-    playerHits = new ArrayList<Point>();
-    playerMisses = new ArrayList<Point>();
-    computerHits = new ArrayList<Point>();
-    computerMisses = new ArrayList<Point>();
 
+        playerHits = new ArrayList<Point>();
+        playerMisses = new ArrayList<Point>();
+        computerHits = new ArrayList<Point>();
+        computerMisses = new ArrayList<Point>();
     }
 }
