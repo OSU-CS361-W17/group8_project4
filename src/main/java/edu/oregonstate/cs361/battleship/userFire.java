@@ -5,6 +5,16 @@ package edu.oregonstate.cs361.battleship;
  */
 public class UserFire {
 
+    /*
+    private Ship computer_aircraftCarrier;
+    private Ship computer_battleship;
+    private Ship computer_destroyer;
+    private Ship computer_cruiser;
+    private Ship computer_submarine;
+     */
+
+
+
     private int userInputRow;
     private int userInputCol;
 

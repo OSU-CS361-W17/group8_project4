@@ -23,6 +23,7 @@ public class BattleshipModel {
     private Point[] computerMisses;
 
     public BattleshipModel () {
+
         //Default start and end constructs
         Point us = new Point(0,0);
         Point ue = new Point(0,0);
