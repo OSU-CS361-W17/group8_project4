@@ -37,6 +37,12 @@
             <version>RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+
     </dependencies>
 
 

@@ -1,0 +1,35 @@
+player ship placement
+player fire
+comp fire
+player wants to know grid location
+
+I *
+N *
+V *
+E *
+S *
+T * 
+
+Card: As a battleship player, I want to fire a shot, so that can destroy the enemy shit.
+
+Conversation: The player will be able to select the col and row he wishes to target. 
+
+Confimation: When the player selects the target position then clicks on the submit fire button.
+
+###########################################
+Create Task
+
+- a function that takes input from the user.
+- a function that analyses the input.
+	if the user hits the target, mark the target location as hit via color and alert stating the user hit.
+	else, send an alert stating the user missed. 
+	else, if the input is invalid, alert an error.
+- a function that marks the locations of the intended location.
+
+
+
+
+
+
+
+

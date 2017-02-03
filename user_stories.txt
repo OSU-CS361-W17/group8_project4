@@ -1,0 +1,23 @@
+player ship placement
+player fire
+comp fire
+player wants to know grid location
+
+I *
+N *
+V *
+E *
+S *
+T * 
+
+Card: As a battleship player, I want to fire a shot, so that can destroy the enemy shit.
+
+Conversation: 
+-The player will be able to select the col and row he wishes to target. 
+-The player will be notified if a target was hit.
+-The player can only select on target position at a time.
+
+Confirmation: 
+-When the player selects the target position then clicks on the submit fire button.
+-Check to see if the boat was hit.
+-Check to see if the player can continue shooting (computer or user won).
