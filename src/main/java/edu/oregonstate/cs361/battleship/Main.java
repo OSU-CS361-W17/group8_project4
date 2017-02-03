@@ -27,14 +27,17 @@ public class Main {
 
     //This function should return a new model
     static String newModel() {
-        return "MODEL";
+        Gson gson = new Gson();
+        BattleshipModel new_game = new BattleshipModel();
+        String model = gson.toJson(new_game);
+        return model;
     }
 
     //This function should accept an HTTP request and deseralize it into an actual Java object.
     private static BattleshipModel getModelFromReq(Request req){
         Gson gson = new Gson();
-        String requeststring = req.body();
-        BattleshipModel model = gson.fromJson(requeststring, BattleshipModel.class);
+        String request_string = req.body();
+        BattleshipModel model = gson.fromJson(request_string, BattleshipModel.class);
         return model;
     }
 
