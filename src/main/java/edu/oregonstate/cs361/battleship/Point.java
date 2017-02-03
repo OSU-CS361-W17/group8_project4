@@ -19,4 +19,8 @@ public class Point {
     public void setAcross(int val) {
         Across = val;
     }
+
+    public int getDown() { return Down; };
+
+    public int getAcross() { return Across; };
 }
