@@ -10,6 +10,14 @@ public class UserFire {
     private boolean hit;
     private BattleshipModel new_game; // temp model.
 
+    public UserFire() {
+        userInputRow = 0;
+        userInputCol = 0;
+        hit = false;
+        new_game = new BattleshipModel();
+    }
+
+
     // e.g.
     // Set the inputs.
     // userInputRow = 2;
@@ -141,6 +149,6 @@ public class UserFire {
         }
          */
 
-
+        return false;
     }
 }

@@ -16,7 +16,12 @@ public class BattleshipModel {
     private Ship computer_aircraftCarrier;
     private Ship computer_battleship;
     private Ship computer_destroyer;
-    private Ship computer_cruiser;
+
+    privatepublic BattleshipModel() {
+        return null;
+    }
+
+    Ship computer_cruiser;
     private Ship computer_submarine;
   
     public ArrayList<Point> playerHits;
@@ -38,7 +43,9 @@ public class BattleshipModel {
     computer_battleship = new Ship("Computer_Battleship", 4, new Point(2,8), new Point(6,8));
     computer_cruiser = new Ship("Computer_Cruiser", 3, new Point(4,1), new Point(4,4));
     computer_destroyer = new Ship("Computer_Destroyer", 2, new Point(7,3), new Point(7,5));
-    computer_submarine = new Ship("Computer_Submarine", 2, new Point(9,6), new Point(9,8));
+    computer_submarine = new Ship("Computer_Submarine", 2, new Point(9,6), new Point(9,8)
+
+    );
 
     playerHits = new ArrayList<Point>();
     playerMisses = new ArrayList<Point>();
