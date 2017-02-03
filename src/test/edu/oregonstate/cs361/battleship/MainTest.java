@@ -47,7 +47,11 @@ class MainTest {
         assertEquals("SHIP",res.body);
     }
     @Test
-    public void test
+    public void testUserFire() {
+        TestResponse res = request("Post", "/fire/1/2");
+        assertEquals(200, res.status);
+        assertEquals("Fired", res.body);
+    }
 
     private TestResponse request(String method, String path) {
         try {
@@ -79,6 +83,4 @@ class MainTest {
             return new Gson().fromJson(body, HashMap.class);
         }
     }
-
-
 }
