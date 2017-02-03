@@ -34,6 +34,7 @@ function placeShip() {
 
 //Similar to placeShip, but instead it will fire at a location the user selects.
 function fire(){
+
    var request = $.ajax({
      url: "/fire/"+$( "#colFire" ).val()+"/"+$( "#rowFire" ).val(),
      method: "post",
@@ -42,12 +43,16 @@ function fire(){
      dataType: "json"
    });
 
+    return 0;
+
+   //This will be called when the call is returned from the server.
    request.done(function( currModel ) {
      displayGameState(currModel);
      gameModel = currModel;
 
    });
 
+   // if there is a problem, and the back end does not respond, then an alert will be shown.
    request.fail(function( jqXHR, textStatus ) {
      alert( "Request failed: " + textStatus );
    });
@@ -56,6 +61,7 @@ function fire(){
 
 //This function will display the game model.  It displays the ships on the users board, and then shows where there have been hits and misses on both boards.
 function displayGameState(gameModel){
+    console.log(gameModel);
 $( '#MyBoard td'  ).css("background-color", "blue");
 $( '#TheirBoard td'  ).css("background-color", "blue");
 

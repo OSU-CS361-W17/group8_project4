@@ -48,7 +48,7 @@ The game should operate as follows:
     "submarine": {
         "name": "Submarine",
         "length": 2,
-       "start": { "Across": 0,"Down": 0 },
+        "start": { "Across": 0,"Down": 0 },
         "end": {"Across": 0, "Down": 0}
     },
     "computer_aircraftCarrier": {
