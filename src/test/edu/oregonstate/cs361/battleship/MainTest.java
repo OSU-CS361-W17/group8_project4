@@ -46,6 +46,8 @@ class MainTest {
         assertEquals(200, res.status);
         assertEquals("SHIP",res.body);
     }
+    @Test
+    public void test
 
     private TestResponse request(String method, String path) {
         try {
