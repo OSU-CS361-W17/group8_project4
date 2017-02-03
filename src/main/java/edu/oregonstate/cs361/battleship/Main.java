@@ -1,11 +1,15 @@
-package edu.oregonstate.cs361.UserFire;
+package edu.oregonstate.cs361.battleship;
 
 import com.google.gson.Gson;
+
 import edu.oregonstate.cs361.battleship.BattleshipModel;
+
 import spark.Request;
 import static spark.Spark.staticFiles;
 import static spark.Spark.get;
 import static spark.Spark.post;
+
+
 
 
 public class Main {
