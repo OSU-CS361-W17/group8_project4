@@ -11,7 +11,7 @@ public class Point {
         Down = d;
         Across = a;
     }
-
+9
     public void setDown(int val) {
         Down = val;
     }
