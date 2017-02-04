@@ -45,17 +45,7 @@ class MainTest {
         assertEquals(200, res.status);
         assertEquals("SHIP",res.body);
     }
-
-    @Test
-    void testCalcEnd() {
-        Point test_start = new Point(1,1);
-        Point test_end = new Point(1,5);
-        String test_orientation = "horizontal";
-        int test_length = 5;
-        TestCalc = calcEnd(test_start; test_orientation, test_length);
-        assertEquals(test_end);
-    }
-
+    
     private TestResponse request(String method, String path) {
         try {
             URL url = new URL("http://localhost:4567" + path);
