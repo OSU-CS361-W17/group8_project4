@@ -31,7 +31,7 @@ public class ComputerFire {
 	}
 	
     private void calculateMissedShotCoordinates() {
-		shipXFire = floor((shipMisses * 2) / 10);	//Ex: floor(34*2/10) = 6 
+		shipXFire = ((shipMisses * 2) / 10);	//Ex: floor(34*2/10) = 6
 		shipYFire = (shipMisses * 2) % 10;			//Ex: 34*2%10 = 8
 													//Coords to fire at: [6][8]
     }
