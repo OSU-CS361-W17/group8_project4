@@ -16,7 +16,6 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 import static spark.Spark.awaitInitialization;
 
-
 /**
  * Created by michaelhilton on 1/26/17.
  */
@@ -45,6 +44,16 @@ class MainTest {
         TestResponse res = request("POST", "/placeShip/aircraftCarrier/1/1/horizontal");
         assertEquals(200, res.status);
         assertEquals("SHIP",res.body);
+    }
+
+    @Test
+    void testCalcEnd() {
+        Point test_start = new Point(1,1);
+        Point test_end = new Point(1,5);
+        String test_orientation = "horizontal";
+        int test_length = 5;
+        TestCalc = calcEnd(test_start; test_orientation, test_length);
+        assertEquals(test_end);
     }
 
     private TestResponse request(String method, String path) {
