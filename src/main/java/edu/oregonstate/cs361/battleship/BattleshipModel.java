@@ -25,7 +25,7 @@ public class BattleshipModel {
     public ArrayList<Point> computerHits;
     public ArrayList<Point> computerMisses;
 
-    BattleshipModel(){
+    public BattleshipModel(){
         Point us = new Point(0,0);
         Point ue = new Point(0,0);
         //Creating user ships
