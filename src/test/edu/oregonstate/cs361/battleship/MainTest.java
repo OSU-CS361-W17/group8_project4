@@ -45,7 +45,7 @@ class MainTest {
         assertEquals(200, res.status);
         assertEquals("SHIP",res.body);
     }
-    
+
     private TestResponse request(String method, String path) {
         try {
             URL url = new URL("http://localhost:4567" + path);
