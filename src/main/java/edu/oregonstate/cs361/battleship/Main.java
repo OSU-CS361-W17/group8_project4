@@ -51,17 +51,7 @@ public class Main {
     }
 
     //Similar to placeShip, but with firing.
-    private static String fireAt(Request req) {
-        return null;
-        //Bruce does stuff here...
-
-        //Computer Fire:
-        // shipMisses = GET (number of computer ship missed shots)
-        // shipXFire = floor((shipMisses * 2) / 10)
-        // shipYFire = (shipMisses * 2) % 10
-        // POST("/ComputerFire/shipXFire/shipYFire)
-
-    }
+    private static String fireAt(Request req) { return null; }
 
 }
 
