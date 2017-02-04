@@ -96,9 +96,3 @@ class computerFireTest {
         ;
     }
 }
-
-//    public void testGetModel() {
-//        TestResponse res = request("GET", "/model");
-//        assertEquals(200, res.status);
-//        assertEquals("MODEL",res.body);
-//}
