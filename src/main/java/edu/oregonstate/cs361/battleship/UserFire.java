@@ -45,8 +45,10 @@ public class UserFire {
             System.out.printf("Target was hit.\n");
             for(int i= 0; i < 100; i++) {
                 if(new_game.computerHits[i].getAcross && new_game.computerHits[i].getDown == 0) {
-                    new_game.computerHits[0].setAcross(userInputRow);
-                    new_game.computerHits[0].setDown(userInputCol);
+                    // Set the row and col position into computerHits.
+                    new_game.computerHits[i].setAcross(userInputRow);
+                    new_game.computerHits[i].setDown(userInputCol);
+
                 } else {
 
                 }
@@ -151,4 +153,6 @@ public class UserFire {
 
         return false;
     }
+
+
 }
