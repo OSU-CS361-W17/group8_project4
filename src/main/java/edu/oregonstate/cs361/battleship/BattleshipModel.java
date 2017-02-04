@@ -17,10 +17,6 @@ public class BattleshipModel {
     private Ship computer_battleship;
     private Ship computer_destroyer;
 
-    privatepublic BattleshipModel() {
-        return null;
-    }
-
     Ship computer_cruiser;
     private Ship computer_submarine;
   
@@ -48,9 +44,6 @@ public class BattleshipModel {
         playerMisses = new ArrayList<Point>();
         computerHits = new ArrayList<Point>();
         computerMisses = new ArrayList<Point>();
-=======
-    Point us = new Point(0,0);
-    Point ue = new Point(0,0);
     //Creating user ships
     }
 }
