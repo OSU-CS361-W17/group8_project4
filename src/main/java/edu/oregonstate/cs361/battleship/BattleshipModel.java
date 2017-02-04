@@ -7,25 +7,25 @@ import java.util.ArrayList;
  */
 public class BattleshipModel {
     //User ships
-    private Ship aircraftCarrier;
-    private Ship battleship;
-    private Ship cruiser;
-    private Ship destroyer;
-    private Ship submarine;
+    public Ship aircraftCarrier;
+    public Ship battleship;
+    public Ship cruiser;
+    public Ship destroyer;
+    public Ship submarine;
     //Computer ships
-    private Ship computer_aircraftCarrier;
-    private Ship computer_battleship;
-    private Ship computer_destroyer;
-
-    Ship computer_cruiser;
-    private Ship computer_submarine;
+    public Ship computer_aircraftCarrier;
+    public Ship computer_battleship;
+    public Ship computer_destroyer;
+    public Ship computer_cruiser;
+    public Ship computer_submarine;
   
     public ArrayList<Point> playerHits;
     public ArrayList<Point> playerMisses;
     public ArrayList<Point> computerHits;
     public ArrayList<Point> computerMisses;
 
-    public BattleshipModel(){
+    public BattleshipModel() {
+    //Default start and end constructs
         Point us = new Point(0,0);
         Point ue = new Point(0,0);
         //Creating user ships
@@ -40,6 +40,7 @@ public class BattleshipModel {
         computer_cruiser = new Ship("Computer_Cruiser", 3, new Point(4,1), new Point(4,4));
         computer_destroyer = new Ship("Computer_Destroyer", 2, new Point(7,3), new Point(7,5));
         computer_submarine = new Ship("Computer_Submarine", 2, new Point(9,6), new Point(9,8));
+
         playerHits = new ArrayList<Point>();
         playerMisses = new ArrayList<Point>();
         computerHits = new ArrayList<Point>();

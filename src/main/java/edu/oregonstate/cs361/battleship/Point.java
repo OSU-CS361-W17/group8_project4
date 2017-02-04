@@ -8,7 +8,7 @@ public class Point {
     private int Across;
 
 
-    public Point(int d, int a) {
+    public Point(int a, int d) {
         Down = d;
         Across = a;
     }

@@ -4,10 +4,10 @@ package edu.oregonstate.cs361.battleship;
  * Created by Joshua Lioy on 2/2/2017.
  */
 public class Ship {
-    private String name;
-    private int length;
-    private Point start;
-    private Point end;
+    protected String name;
+    protected int length;
+    protected Point start;
+    protected Point end;
 
     public Ship(String id, int size, Point s, Point e) {
         name = id;
