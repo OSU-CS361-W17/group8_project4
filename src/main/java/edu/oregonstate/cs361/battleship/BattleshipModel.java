@@ -14,6 +14,7 @@ public class BattleshipModel {
     public Ship submarine;
     //Computer ships
 <<<<<<< HEAD
+<<<<<<< HEAD
     private Ship computer_aircraftCarrier;
     private Ship computer_battleship;
     private Ship computer_destroyer;
@@ -21,12 +22,17 @@ public class BattleshipModel {
     private Ship computer_cruiser;
     private Ship computer_submarine;
 =======
+=======
+>>>>>>> de24486d49ae8c18788978d873b68e24b1b6d9ab
     public Ship computer_aircraftCarrier;
     public Ship computer_battleship;
     public Ship computer_destroyer;
     public Ship computer_cruiser;
     public Ship computer_submarine;
+<<<<<<< HEAD
 >>>>>>> f6cd8935d9f6e473c25b3f573f99174b6265e0b4
+=======
+>>>>>>> de24486d49ae8c18788978d873b68e24b1b6d9ab
   
     public ArrayList<Point> playerHits;
     public ArrayList<Point> playerMisses;
