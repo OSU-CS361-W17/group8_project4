@@ -164,9 +164,7 @@ public class Main {
         return temp;
     }
     //Similar to placeShip, but with firing.
-    private static String fireAt(Request req) {
-        return null;
-    }
+    private static String fireAt(Request req) { return null; }
 
 }
 
