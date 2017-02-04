@@ -46,7 +46,10 @@ class MainTest {
         assertEquals("SHIP",res.body);
     }
 
-
+    @Test
+    void testCalcEnd() {
+        
+    }
 
     private TestResponse request(String method, String path) {
         try {
