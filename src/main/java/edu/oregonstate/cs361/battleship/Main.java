@@ -1,16 +1,9 @@
 package edu.oregonstate.cs361.battleship;
 
 import com.google.gson.Gson;
-
-import edu.oregonstate.cs361.battleship.BattleshipModel;
-
 import spark.Request;
 
-import java.net.URI;
-
-import static spark.Spark.staticFiles;
-import static spark.Spark.get;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 public class Main {
 
@@ -161,7 +154,10 @@ public class Main {
         return temp;
     }
     //Similar to placeShip, but with firing.
-    private static String fireAt(Request req) { return null; }
+    private static String fireAt(Request req) {
+        UserFire userfire = new UserFire();
+        return null;
+    }
 
 }
 
