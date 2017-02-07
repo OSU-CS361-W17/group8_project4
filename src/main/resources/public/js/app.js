@@ -36,14 +36,12 @@ function placeShip() {
 function fire(){
 
    var request = $.ajax({
-     url: "/fire/"+$( "#colFire" ).val()+"/"+$( "#rowFire" ).val(),
+     url: "/fire/"+$( "#rowFire" ).val()+"/"+$( "#colFire" ).val(),
      method: "post",
      data: JSON.stringify(gameModel),
      contentType: "application/json; charset=utf-8",
      dataType: "json"
    });
-
-    return 0;
 
    //This will be called when the call is returned from the server.
    request.done(function( currModel ) {
@@ -64,7 +62,7 @@ function displayGameState(gameModel){
     console.log(gameModel);
 $( '#MyBoard td'  ).css("background-color", "blue");
 $( '#TheirBoard td'  ).css("background-color", "blue");
-
+    
 displayShip(gameModel.aircraftCarrier);
 displayShip(gameModel.battleship);
 displayShip(gameModel.cruiser);
@@ -72,17 +70,17 @@ displayShip(gameModel.destroyer);
 displayShip(gameModel.submarine);
 
 for (var i = 0; i < gameModel.computerMisses.length; i++) {
-   $( '#TheirBoard #' + gameModel.computerMisses[i].Across + '_' + gameModel.computerMisses[i].Down ).css("background-color", "green");
+   $( '#MyBoard #' + gameModel.computerMisses[i].row + '_' + gameModel.computerMisses[i].col ).css("background-color", "green");
 }
 for (var i = 0; i < gameModel.computerHits.length; i++) {
-   $( '#TheirBoard #' + gameModel.computerHits[i].Across + '_' + gameModel.computerHits[i].Down ).css("background-color", "red");
+   $( '#MyBoard #' + gameModel.computerHits[i].row + '_' + gameModel.computerHits[i].col ).css("background-color", "red");
 }
 
 for (var i = 0; i < gameModel.playerMisses.length; i++) {
-   $( '#MyBoard #' + gameModel.playerMisses[i].Across + '_' + gameModel.playerMisses[i].Down ).css("background-color", "green");
+   $( '#TheirBoard #' + gameModel.playerMisses[i].row + '_' + gameModel.playerMisses[i].col ).css("background-color", "green");
 }
 for (var i = 0; i < gameModel.playerHits.length; i++) {
-   $( '#MyBoard #' + gameModel.playerHits[i].Across + '_' + gameModel.playerHits[i].Down ).css("background-color", "red");
+   $( '#TheirBoard #' + gameModel.playerHits[i].row + '_' + gameModel.playerHits[i].col ).css("background-color", "red");
 }
 
 
@@ -92,18 +90,18 @@ for (var i = 0; i < gameModel.playerHits.length; i++) {
 
 //This function will display a ship given a ship object in JSON
 function displayShip(ship){
- startCoordAcross = ship.start.Across;
- startCoordDown = ship.start.Down;
- endCoordAcross = ship.end.Across;
- endCoordDown = ship.end.Down;
- if(startCoordAcross > 0){
-    if(startCoordAcross == endCoordAcross){
-        for (i = startCoordDown; i <= endCoordDown; i++) {
-            $( '#MyBoard #'+startCoordAcross+'_'+i  ).css("background-color", "yellow");
+ startCoordRow = ship.start.row;
+ startCoordCol = ship.start.col;
+ endCoordRow = ship.end.row;
+ endCoordCol = ship.end.col;
+ if(startCoordRow > 0){
+    if(startCoordRow == endCoordRow){
+        for (i = startCoordCol; i <= endCoordCol; i++) {
+            $( '#MyBoard #'+startCoordRow+'_'+i  ).css("background-color", "yellow");
         }
     } else {
-        for (i = startCoordAcross; i <= endCoordAcross; i++) {
-            $( '#MyBoard #'+i+'_'+startCoordDown  ).css("background-color", "yellow");
+        for (i = startCoordRow; i <= endCoordRow; i++) {
+            $( '#MyBoard #'+i+'_'+startCoordCol  ).css("background-color", "yellow");
         }
     }
  }

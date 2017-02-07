@@ -4,35 +4,38 @@ package edu.oregonstate.cs361.battleship;
  * Created by mcwhirtc on February 3rd, 2017.
  */
 public class ComputerFire {
-	//User Fire should run first.
-	//Computer Fire:
-    // shipMisses = GET (number of computer ship missed shots)
-    // shipXFire = floor((shipMisses * 2) / 10)
-    // shipYFire = (shipMisses * 2) % 10
-    // POST("/ComputerFire/shipXFire/shipYFire)
 
-	//public
-	public int shipMisses = 0;			//GET (number of computer ship missed shots)
+	// Computer AI, the BattleshipModel, Number of ships, and the ship array containing all the user ships
+	private BattleshipModel cpuModel;
+	private int numShips;
+	private Ship[] allUserShips;
 
-	//private
-	private int shipXFire = 0;			//shipXFire = floor((shipMisses * 2) / 10)
-	private int shipYFire = 0;			//shipYFire = (shipMisses * 2) % 10
-
-	public /*Player Board Object Type*/ int chooseCoordinates() {
-		//if(x)										//Previous shot missed.
-			calculateMissedShotCoordinates();		//Calculate X,Y to fire at.
-			return /*Fire[shipXFire][shipYFire]*/ 0;//Return fire location object.
-		
-		//else if(y)								//Previous shot hit!
-			//NULL;									//Follow a tracking procedure.
-		
-		//else										//Previous shot was invalid?
-			//NULL;									//Do nothing
+	// Constructor
+	public ComputerFire (BattleshipModel cpuModel) {
+		this.cpuModel = cpuModel;
+		setAllUserShips();
 	}
-	
-    private void calculateMissedShotCoordinates() {
-		shipXFire = ((shipMisses * 2) / 10);	//Ex: floor(34*2/10) = 6
-		shipYFire = (shipMisses * 2) % 10;			//Ex: 34*2%10 = 8
-													//Coords to fire at: [6][8]
-    }
+
+	// This function add all the User ships in the model to the Ship array
+	public void setAllUserShips() {
+		numShips = 5;
+		allUserShips = new Ship [numShips];
+		allUserShips[0] = cpuModel.getAircraftCarrier();
+		allUserShips[1] = cpuModel.getBattleship();
+		allUserShips[2] = cpuModel.getCruiser();
+		allUserShips[3] = cpuModel.getDestroyer();
+		allUserShips[4] = cpuModel.getSubmarine();
+	}
+
+	public BattleshipModel cpuFireBattleshipModel(ComputerAI ai) {
+		Point targetCpuFired = ai.fire();
+		for (int i = 0; i < numShips; i++) {
+			if (Utility.targetHit(allUserShips[i].getStart(), allUserShips[i].getEnd(), targetCpuFired)) {
+				cpuModel.addComputerHits(targetCpuFired);
+				return cpuModel;
+			}
+		}
+		cpuModel.addComputerMisses(targetCpuFired);
+		return cpuModel;
+	}
 }
