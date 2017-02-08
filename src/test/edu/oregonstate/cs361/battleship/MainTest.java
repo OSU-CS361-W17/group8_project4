@@ -57,12 +57,6 @@ class MainTest {
         String s = gson.toJson(b);
         assertEquals(s,res.body);
     }
-    @Test
-    public void testUserFire() {
-        TestResponse res = request("Post", "/fire/1/2");
-        assertEquals(200, res.status);
-        assertEquals("Fired", res.body);
-    }
 
     @Test
     void testCalcEnd() {
@@ -99,5 +93,7 @@ class MainTest {
             return new Gson().fromJson(body, HashMap.class);
         }
     }
+
+
 }
 
