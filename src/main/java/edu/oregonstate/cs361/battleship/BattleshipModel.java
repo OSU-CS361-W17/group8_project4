@@ -2,9 +2,6 @@ package edu.oregonstate.cs361.battleship;
 
 import java.util.ArrayList;
 
-/**
- * Created by michaelhilton on 1/26/17.
- */
 public class BattleshipModel {
 
     // User ships
