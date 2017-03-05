@@ -13,27 +13,37 @@ class BattleshipModelTest {
         Point p = new Point(0,0);
         BattleshipModel b = new BattleshipModel();
 
-        assertEquals("AircraftCarrier",b.aircraftCarrier.name);
-        assertEquals(5, b.aircraftCarrier.length);
-        assertEquals("Battleship",b.battleship.name);
-        assertEquals(4, b.battleship.length);
-        assertEquals("Cruiser",b.cruiser.name);
-        assertEquals(3, b.cruiser.length);
-        assertEquals("Destroyer",b.destroyer.name);
-        assertEquals(2, b.destroyer.length);
-        assertEquals("Submarine",b.submarine.name);
-        assertEquals(2, b.submarine.length);
+        Ship s = b.getAircraftCarrier();
+        assertEquals("AircraftCarrier",s.getName());
+        assertEquals(5, s.getLength());
+        s = b.getBattleship();
+        assertEquals("Battleship", s.getName());
+        assertEquals(4, s.getLength());
+        s = b.getClipper();
+        assertEquals("Clipper", s.getName());
+        assertEquals(3, s.getLength());
+        s = b.getDinghy();
+        assertEquals("Dinghy", s.getName());
+        assertEquals(1, s.getLength());
+        s = b.getSubmarine();
+        assertEquals("Submarine", s.getName());
+        assertEquals(2, s.getLength());
 
-        assertEquals("Computer_AircraftCarrier",b.computer_aircraftCarrier.name);
-        assertEquals(5, b.computer_aircraftCarrier.length);
-        assertEquals("Computer_Battleship",b.computer_battleship.name);
-        assertEquals(4, b.computer_battleship.length);
-        assertEquals("Computer_Cruiser",b.computer_cruiser.name);
-        assertEquals(3, b.computer_cruiser.length);
-        assertEquals("Computer_Destroyer",b.computer_destroyer.name);
-        assertEquals(2, b.computer_destroyer.length);
-        assertEquals("Computer_Submarine",b.computer_submarine.name);
-        assertEquals(2, b.computer_submarine.length);
+        s = b.getComputer_aircraftCarrier();
+        assertEquals("Computer_AircraftCarrier", s.getName());
+        assertEquals(5, s.getLength());
+        s = b.getComputer_battleship();
+        assertEquals("Computer_Battleship", s.getName());
+        assertEquals(4, s.getLength());
+        s = b.getComputer_clipper();
+        assertEquals("Computer_Clipper", s.getName());
+        assertEquals(3, s.getLength());
+        s = b.getComputer_dinghy();
+        assertEquals("Computer_Dinghy", s.getName());
+        assertEquals(1, s.getLength());
+        s = b.getComputer_submarine();
+        assertEquals("Computer_Submarine", s.getName());
+        assertEquals(2, s.getLength());
 
     }
 }

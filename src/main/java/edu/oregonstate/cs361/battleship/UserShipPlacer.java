@@ -30,11 +30,11 @@ public class UserShipPlacer {
         else if (shipName.equals("battleship")) {
             userModel.setBattleship(newShip);
         }
-        else if (shipName.equals("cruiser")) {
-            userModel.setCruiser(newShip);
+        else if (shipName.equals("clipper")) {
+            userModel.setClipper(newShip);
         }
-        else if (shipName.equals("destroyer")) {
-            userModel.setDestroyer(newShip);
+        else if (shipName.equals("dinghy")) {
+            userModel.setDinghy(newShip);
         }
         else if (shipName.equals("submarine")) {
             userModel.setSubmarine(newShip);

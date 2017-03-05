@@ -12,9 +12,9 @@ class ShipTest {
     public void testShip() {
         Point p = new Point(0,0);
         Ship s = new Ship("cheese", 5, p, p);
-        assertEquals("cheese", s.name);
-        assertEquals(5, s.length);
-        assertEquals(p,s.start);
-        assertEquals(p, s.end);
+        assertEquals("cheese", s.getName());
+        assertEquals(5, s.getLength());
+        assertEquals(p,s.getStart());
+        assertEquals(p, s.getEnd());
     }
 }

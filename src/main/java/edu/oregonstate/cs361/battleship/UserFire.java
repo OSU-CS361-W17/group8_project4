@@ -28,8 +28,8 @@ public class UserFire {
         allCpuShips = new Ship [numShips];
         allCpuShips[0] = userModel.getComputer_aircraftCarrier();
         allCpuShips[1] = userModel.getComputer_battleship();
-        allCpuShips[2] = userModel.getComputer_cruiser();
-        allCpuShips[3] = userModel.getComputer_destroyer();
+        allCpuShips[2] = userModel.getComputer_clipper();
+        allCpuShips[3] = userModel.getComputer_dinghy();
         allCpuShips[4] = userModel.getComputer_submarine();
     }
 
