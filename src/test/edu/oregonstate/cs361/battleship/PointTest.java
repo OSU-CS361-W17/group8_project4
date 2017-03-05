@@ -9,29 +9,29 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class PointTest {
     @Test
-    public void testSetDown() {
+    public void testSetCol() {
         Point a = new Point(0,0);
-        a.setDown(2);
-        assertEquals(2, a.getDown());
+        a.setCol(2);
+        assertEquals(2, a.getCol());
     }
 
     @Test
-    public void setAcross() {
+    public void testSetRow() {
         Point a = new Point(0,0);
-        a.setAcross(2);
-        assertEquals(2, a.getAcross());
+        a.setRow(2);
+        assertEquals(2, a.getRow());
     }
 
-    @Test
-    public void getDown() {
-        Point a = new Point(0,0);
-        assertEquals(0, a.getDown());
-    }
-
-    @Test
-    public void getAcross() {
-        Point a = new Point(0,0);
-        assertEquals(0, a.getAcross());
-    }
+//    @Test
+//    public void getCol() {
+//        Point a = new Point(0,0);
+//        assertEquals(0, a.getDown());
+//    }
+//
+//    @Test
+//    public void getRow() {
+//        Point a = new Point(0,0);
+//        assertEquals(0, a.getAcross());
+//    }
 
 }
