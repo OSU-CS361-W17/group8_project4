@@ -74,7 +74,7 @@ public class Utility {
             if (fired.getCol() != start.getCol()) {
                 return false;
             }
-            if (fired.getCol() < start.getCol() || fired.getCol() > end.getCol()) {
+            if (fired.getRow() < start.getRow() || fired.getRow() > end.getRow()) {
                 return false;
             }
         }

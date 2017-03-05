@@ -25,6 +25,9 @@ public class Main {
 
         // This will listen to POST requests and expects to receive a game model, as well as location to place the ship
         post("/placeShip/:id/:row/:col/:orientation", (req, res) -> placeShip(req));
+
+        // This weill listen to POST requests and expects to receive a game model, as well as location to scan
+        post("/scan/:row/:col", (req, res) -> scan(req, ai));
     }
     // This function initialize map for shipName and its length
     private static void createShipInfo(){
@@ -75,6 +78,22 @@ public class Main {
         ComputerFire cpuFire = new ComputerFire(userModel);
         userModel = cpuFire.cpuFireBattleshipModel(ai);
 
+        // Parse to JSON string
+        String parsedNewModel = gson.toJson(userModel);
+        return parsedNewModel;
+    }
+
+    private static String scan(Request req, ComputerAI ai) {
+        Gson gson = new Gson();
+        BattleshipModel userModel = Utility.getModelFromReq(req);
+        String userScanUrl = req.url();
+        // Pass into Scanner
+        Scanner scanner = new Scanner(userModel, userScanUrl);
+        userModel = scanner.userScanBattleshipModel();
+        if (scanner.getScanned()) {
+            ComputerFire cpuFire = new ComputerFire(userModel);
+            userModel = cpuFire.cpuFireBattleshipModel(ai);
+        }
         // Parse to JSON string
         String parsedNewModel = gson.toJson(userModel);
         return parsedNewModel;
