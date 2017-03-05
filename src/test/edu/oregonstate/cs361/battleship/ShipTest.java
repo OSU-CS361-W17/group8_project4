@@ -10,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShipTest {
     @Test
     public void testShip() {
-        Point p = new Point(0,0);
+        Point p = new Point(0, 0);
         Ship s = new Ship("cheese", 5, p, p);
         assertEquals("cheese", s.getName());
         assertEquals(5, s.getLength());
-        assertEquals(p,s.getStart());
+        assertEquals(p, s.getStart());
         assertEquals(p, s.getEnd());
     }
 }

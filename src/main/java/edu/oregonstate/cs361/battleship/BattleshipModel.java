@@ -90,9 +90,7 @@ public class BattleshipModel {
     public void setComputer_submarine(Ship computer_submarine) {
         this.computer_submarine = computer_submarine;
     }
-    public void addPlayerHits(Point hit) {
-        playerHits.add(hit);
-    }
+    public void addPlayerHits(Point hit) { playerHits.add(hit); }
     public void addPlayerMisses(Point miss) {
         playerMisses.add(miss);
     }
