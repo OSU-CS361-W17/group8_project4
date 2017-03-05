@@ -31,7 +31,14 @@ public class ComputerFire {
 		Point targetCpuFired = ai.fire();
 		for (int i = 0; i < numShips; i++) {
 			if (Utility.targetHit(allUserShips[i].getStart(), allUserShips[i].getEnd(), targetCpuFired)) {
-				cpuModel.addComputerHits(targetCpuFired);
+				//if((i == 2) || (i == 3)) {
+				//	allUserShips[i].setHit(1);
+				//	allUserShips[i].destroy(cpuModel);
+				//}
+
+				//else {
+					cpuModel.addComputerHits(targetCpuFired);
+				//}
 				return cpuModel;
 			}
 		}

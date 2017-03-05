@@ -36,7 +36,14 @@ public class UserFire {
     public BattleshipModel userFireBattleshipModel(){
         for (int i = 0; i < numShips; i++) {
             if (Utility.targetHit(allCpuShips[i].getStart(), allCpuShips[i].getEnd(), targetUserFired)) {
-                userModel.addPlayerHits(targetUserFired);
+                //if((i == 2) || (i == 3)) {
+                //    allCpuShips[i].setHit(1);
+                //    allCpuShips[i].destroy(userModel);
+                //}
+
+                //else {
+                    userModel.addPlayerHits(targetUserFired);
+                //}
                 return userModel;
             }
         }
