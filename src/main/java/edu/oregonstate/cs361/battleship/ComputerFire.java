@@ -22,8 +22,8 @@ public class ComputerFire {
 		allUserShips = new Ship [numShips];
 		allUserShips[0] = cpuModel.getAircraftCarrier();
 		allUserShips[1] = cpuModel.getBattleship();
-		allUserShips[2] = cpuModel.getClipper();
-		allUserShips[3] = cpuModel.getDinghy();
+		allUserShips[2] = cpuModel.getCruiser();
+		allUserShips[3] = cpuModel.getDestroyer();
 		allUserShips[4] = cpuModel.getSubmarine();
 	}
 

@@ -7,15 +7,15 @@ public class BattleshipModel {
     // User ships
     private Ship aircraftCarrier;
     private Ship battleship;
-    private Ship clipper;
-    private Ship dinghy;
+    private Ship cruiser;
+    private Ship destroyer;
     private Ship submarine;
 
     // Computer ships
     private Ship computer_aircraftCarrier;
     private Ship computer_battleship;
-    private Ship computer_clipper;
-    private Ship computer_dinghy;
+    private Ship computer_destroyer;
+    private Ship computer_cruiser;
     private Ship computer_submarine;
 
     // ArrayList: Player & CPU Hits/Misses
@@ -33,15 +33,15 @@ public class BattleshipModel {
         // Creating user ships
         aircraftCarrier = new Ship("aircraftCarrier", 5, start, end);
         battleship = new Ship("battleship", 4, start, end);
-        clipper = new Ship("clipper", 3, start, end);
-        dinghy = new Ship("dinghy", 1, start, end);
+        cruiser = new Ship("cruiser", 3, start, end);
+        destroyer = new Ship("destroyer", 2, start, end);
         submarine = new Ship("submarine", 2, start, end);
 
         // Creating computer ships and initializing to the values from the readme.md
         computer_aircraftCarrier = new Ship("computer_aircraftCarrier", 5, new Point(2,2), new Point(2,7));
         computer_battleship = new Ship("computer_battleship", 4, new Point(2,8), new Point(6,8));
-        computer_clipper = new Ship("computer_clipper", 3, new Point(4,1), new Point(4,4));
-        computer_dinghy = new Ship("computer_dinghy", 1, new Point(7,3), new Point(7,3));
+        computer_cruiser = new Ship("computer_cruiser", 3, new Point(4,1), new Point(4,4));
+        computer_destroyer = new Ship("computer_destroyer", 2, new Point(7,3), new Point(7,5));
         computer_submarine = new Ship("computer_submarine", 2, new Point(9,6), new Point(9,8));
 
         // Creating ArraysLists
@@ -54,38 +54,44 @@ public class BattleshipModel {
     // Accessor and Mutator
     public Ship getAircraftCarrier() { return aircraftCarrier; }
     public Ship getBattleship() { return battleship; }
-    public Ship getClipper() { return clipper; }
-    public Ship getDinghy() { return dinghy; }
+    public Ship getCruiser() { return cruiser; }
+    public Ship getDestroyer() { return destroyer; }
     public Ship getSubmarine() { return submarine; }
     public Ship getComputer_aircraftCarrier() { return computer_aircraftCarrier; }
     public Ship getComputer_battleship() { return computer_battleship; }
-    public Ship getComputer_dinghy() { return computer_dinghy; }
-    public Ship getComputer_clipper() { return computer_clipper; }
+    public Ship getComputer_destroyer() { return computer_destroyer; }
+    public Ship getComputer_cruiser() { return computer_cruiser; }
     public Ship getComputer_submarine() { return computer_submarine; }
     public ArrayList<Point> getPlayerHits() { return playerHits; }
     public ArrayList<Point> getPlayermisses() { return playerMisses;}
     public ArrayList<Point> getComputerHits() { return computerHits; }
     public ArrayList<Point> getComputermisses() { return computerMisses; }
-    public void setAircraftCarrier (Ship aircraftCarrier) { this.aircraftCarrier = aircraftCarrier; }
+    public void setAircraftCarrier (Ship aircraftCarrier) {
+        this.aircraftCarrier = aircraftCarrier;
+    }
     public void setBattleship(Ship battleship) {
         this.battleship = battleship;
     }
-    public void setClipper(Ship clipper) {
-        this.clipper = clipper;
+    public void setCruiser(Ship cruiser) {
+        this.cruiser = cruiser;
     }
-    public void setDinghy(Ship dinghy) { this.dinghy = dinghy; }
+    public void setDestroyer(Ship destroyer) {
+        this.destroyer = destroyer;
+    }
     public void setSubmarine(Ship submarine) {
         this.submarine = submarine;
     }
-    public void setComputer_aircraftCarrier(Ship computer_aircraftCarrier) { this.computer_aircraftCarrier = computer_aircraftCarrier; }
+    public void setComputer_aircraftCarrier(Ship computer_aircraftCarrier) {
+        this.computer_aircraftCarrier = computer_aircraftCarrier;
+    }
     public void setComputer_battleship(Ship computer_battleship) {
         this.computer_battleship = computer_battleship;
     }
-    public void setComputer_clipper(Ship computer_clipper) {
-        this.computer_clipper = computer_clipper;
+    public void setComputer_cruiser(Ship computer_cruiser) {
+        this.computer_cruiser = computer_cruiser;
     }
-    public void setComputer_dinghy(Ship computer_dinghy) {
-        this.computer_dinghy = computer_dinghy;
+    public void setComputer_destroyer(Ship computer_destroyer) {
+        this.computer_destroyer = computer_destroyer;
     }
     public void setComputer_submarine(Ship computer_submarine) {
         this.computer_submarine = computer_submarine;

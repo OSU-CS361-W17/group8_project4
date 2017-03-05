@@ -43,6 +43,27 @@ class MainTest {
         assertEquals(m,res.body);
     }
 
+    @Test@Ignore
+    public void testPlaceShip() {
+        TestResponse res = request("POST", "/placeShip/aircraftCarrier/1/1/horizontal");
+        assertEquals(200, res.status);
+        Gson gson = new Gson();
+        BattleshipModel b = new BattleshipModel();
+        b.aircraftCarrier.start.setAcross(1);
+        b.aircraftCarrier.start.setDown(1);
+        b.aircraftCarrier.start.setAcross(5);
+        b.aircraftCarrier.start.setDown(1);
+
+        String s = gson.toJson(b);
+        assertEquals(s,res.body);
+    }
+    @Test
+    public void testUserFire() {
+        TestResponse res = request("Post", "/fire/1/2");
+        assertEquals(200, res.status);
+        assertEquals("Fired", res.body);
+    }
+
     @Test
     void testCalcEnd() {
 

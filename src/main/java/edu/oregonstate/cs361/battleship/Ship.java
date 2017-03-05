@@ -1,7 +1,7 @@
 package edu.oregonstate.cs361.battleship;
 
 /**
- * Created by Joshua Lioy on 3/4/2017.
+ * Created by Joshua Lioy on 2/2/2017.
  */
 public class Ship {
     private String name;
