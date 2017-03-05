@@ -24,12 +24,18 @@ public class BattleshipModel {
     private ArrayList<Point> computerHits;
     private ArrayList<Point> computerMisses;
 
+    // Variables for Scan Feature
+    private int scanLeft;
+    private ArrayList<Point> scanHits;
+    private ArrayList<Point> scanMisses;
+    private ArrayList<Point> scanPos;
+
     // Constructor
     public BattleshipModel() {
         // Default start and end constructs
+        scanLeft = 3;
         Point start = new Point(0,0);
         Point end = new Point(0,0);
-
         // Creating user ships
         aircraftCarrier = new Ship("aircraftCarrier", 5, start, end);
         battleship = new Ship("battleship", 4, start, end);
@@ -49,6 +55,9 @@ public class BattleshipModel {
         playerMisses = new ArrayList<Point>();
         computerHits = new ArrayList<Point>();
         computerMisses = new ArrayList<Point>();
+        scanHits = new ArrayList<Point>();
+        scanMisses = new ArrayList<Point>();
+        scanPos = new ArrayList<Point>();
     }
 
     // Accessor and Mutator
@@ -66,6 +75,9 @@ public class BattleshipModel {
     public ArrayList<Point> getPlayermisses() { return playerMisses;}
     public ArrayList<Point> getComputerHits() { return computerHits; }
     public ArrayList<Point> getComputermisses() { return computerMisses; }
+    public ArrayList<Point> getScanHits() { return scanHits; }
+    public ArrayList<Point> getScanMisses() { return scanMisses; }
+    public ArrayList<Point> getScanPos() { return scanPos; }
     public void setAircraftCarrier (Ship aircraftCarrier) { this.aircraftCarrier = aircraftCarrier; }
     public void setBattleship(Ship battleship) {
         this.battleship = battleship;
@@ -101,5 +113,23 @@ public class BattleshipModel {
     }
     public void addComputerMisses(Point miss) {
         computerMisses.add(miss);
+    }
+    public void addScanHits(Point hit) {
+        scanHits.add(hit);
+    }
+    public void addScanMisses(Point miss) {
+        scanMisses.add(miss);
+    }
+    public void addScanPos(Point pos) {
+        scanPos.add(pos);
+    }
+
+    // This function see if there are any scans available. If so, decrease the count by one and return true, else return false.
+    public Boolean scansAvailable() {
+        if(scanLeft != 0){
+            scanLeft--;
+            return true;
+        }
+        return false;
     }
 }

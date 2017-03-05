@@ -52,6 +52,28 @@ function fire(){
     });
 }
 
+// This function send request to scan enemy territory, and receive game state
+function scan(){
+    var request = $.ajax({
+        url: "/scan/" + $("#rowScan").val() + "/" + $("#colScan").val(),
+        method: "post",
+        data: JSON.stringify(gameModel),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json"
+    });
+    
+    // This will be called when the call is returned from the server
+    request.done(function(currModel){
+        displayGameState(currModel);
+        gameModel = currModel;
+    });
+    
+    // If there is a problem, and the back end does not respond, then an alert will be shown.
+    request.fail(function( jqXHR, textStatus ) {
+        alert( "Request failed: " + textStatus );
+    });
+}
+
 //This function will display the game model.  It displays the ships on the users board, and then shows where there have been hits and misses on both boards.
 function displayGameState(gameModel){
     
@@ -64,7 +86,13 @@ function displayGameState(gameModel){
     displayShip(gameModel.clipper);
     displayShip(gameModel.dinghy);
     displayShip(gameModel.submarine);
-
+    
+    for (var i = 0; i < gameModel.scanMisses.length; i++) {
+        $("#TheirBoard #" + gameModel.scanMisses[i].row + "_" + gameModel.scanMisses[i].col).css("background-color", "teal");
+    }
+    for (var i = 0; i < gameModel.scanHits.length; i++) {
+        $("#TheirBoard #" + gameModel.scanHits[i].row + "_" + gameModel.scanHits[i].col).css("background-color", "orange");
+    }
     for (var i = 0; i < gameModel.computerMisses.length; i++) {
         $( '#MyBoard #' + gameModel.computerMisses[i].row + '_' + gameModel.computerMisses[i].col ).css("background-color", "green");
     }
