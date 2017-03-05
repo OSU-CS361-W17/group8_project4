@@ -12,10 +12,10 @@ class ShipTest {
     public void testShip() {
         Point p = new Point(0, 0);
         Ship s = new Ship("cheese", 5, p, p);
-        assertEquals("cheese", s.name);
-        assertEquals(5, s.length);
-        assertEquals(p, s.start);
-        assertEquals(p, s.end);
+        assertEquals("cheese", s.getName());
+        assertEquals(5, s.getLength());
+        assertEquals(p, s.getStart());
+        assertEquals(p, s.getEnd());
     }
 }
 
@@ -26,14 +26,17 @@ class ShipTest {
 class CivilianShipTest {
     @Test
     public void testCivShip() {
-        Point p = new Point(0, 0);
-        Ship s = new Ship("civShip", 3, p, p);
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(0, 2);
+        Ship s = new Ship("civShip", 3, p1, p2);
         assertEquals("civShip", s.name);
         assertEquals(3, s.length);
-        assertEquals(p, s.start);
-        assertEquals(p, s.end);
+        assertEquals(p1, s.start);
+        assertEquals(p2, s.end);
         /*
-        Fire f = new Fire(0, 0);
+        //Fire f = new Fire(0, 0);  //Not sure how to do this call.
+        s.setHit(1);
+        if (s.getHit() == 1) { s.destroy(); }
         assertEquals(1, s.hit);
         assertEquals(0, s.health);
          */

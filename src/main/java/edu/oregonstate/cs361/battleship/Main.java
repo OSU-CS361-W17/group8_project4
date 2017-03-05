@@ -32,8 +32,8 @@ public class Main {
         shipInfo = new HashMap<>();
         shipInfo.put("aircraftCarrier", 5);
         shipInfo.put("battleship", 4);
-        shipInfo.put("cruiser", 3);
-        shipInfo.put("destroyer", 2);
+        shipInfo.put("clipper", 3);
+        shipInfo.put("dinghy", 2);
         shipInfo.put("submarine", 2);
     }
     //This function return a new model
