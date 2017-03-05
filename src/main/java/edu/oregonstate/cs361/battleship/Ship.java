@@ -8,6 +8,7 @@ public class Ship {
     private int length;
     private Point start;
     private Point end;
+    private boolean stealthMode;
 
     // Constructor
     public Ship(String name, int length, Point start, Point end) {
@@ -15,6 +16,7 @@ public class Ship {
         this.length = length;
         this.start = start;
         this.end = end;
+        this.stealthMode = false;
     }
 
     // Accessor and Mutator
@@ -34,4 +36,5 @@ public class Ship {
     public void setEnd(Point end) {
         this.end = end;
     }
+    public void setStealthMode(boolean mode) { this.stealthMode = mode; }
 }
