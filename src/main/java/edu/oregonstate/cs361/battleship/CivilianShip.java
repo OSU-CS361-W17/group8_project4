@@ -34,10 +34,10 @@ public class CivilianShip extends Ship {
     }
 
     //Accessors
-    public boolean getHit() { return isHit; }
+    //public boolean getHit() { return isHit; }
 
     //Mutators
-    public void setHit(boolean shot) { this.isHit = shot; }
+    //public void setHit(boolean shot) { this.isHit = shot; }
 }
 
 /*

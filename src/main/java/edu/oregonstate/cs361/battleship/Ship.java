@@ -37,4 +37,12 @@ public class Ship {
         this.end = end;
     }
     public void setStealthMode(boolean mode) { this.stealthMode = mode; }
+
+    /*
+    * Decided to move these two functions because it can also apply to all ships in general.
+    * */
+    // Accessors
+    public boolean getHit() { return isHit; }
+    //Mutators
+    public void setHit(boolean shot) { this.isHit = shot; }
 }
