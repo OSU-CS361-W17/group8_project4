@@ -61,4 +61,27 @@ public class ComputerAI {
         cpuTargetFired = targetDeterminator();
         return cpuTargetFired;
     }
+
+
+    /*
+    * computer begins with random choosing location to fire at on the players's board.
+    * if the computer hits a ship w/ its fire, then, it will try to sink the ship.
+    * the computer must adhere to the player rules of battleship. the computer cannot "cheat"
+    * by seeing the location of the player's bound or ship. These are the requirements of project 4.
+    * */
+    public boolean levelOfDifficulty(boolean difficulty_hard) {
+
+        if(difficulty_hard) {
+
+
+            if() {
+                // then, it will try to sink the ship.
+            }
+
+            return true;
+        } else if (!difficulty_hard) {
+            // The user is playing the game on easy mode.
+            return false;
+        }
+    };
 }
