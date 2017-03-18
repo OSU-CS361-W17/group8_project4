@@ -70,18 +70,21 @@ public class ComputerAI {
     * by seeing the location of the player's bound or ship. These are the requirements of project 4.
     * */
     public boolean levelOfDifficulty(boolean difficulty_hard) {
-
-        if(difficulty_hard) {
-
-
-            if() {
-                // then, it will try to sink the ship.
-            }
+        if (difficulty_hard) {
+            //if(1 == 1) {
+            ; // then, it will try to sink the ship.
+            //}
 
             return true;
-        } else if (!difficulty_hard) {
+        }
+
+        else if (!difficulty_hard) {
             // The user is playing the game on easy mode.
             return false;
         }
-    };
+
+        else {
+            return false;
+        }
+    }
 }

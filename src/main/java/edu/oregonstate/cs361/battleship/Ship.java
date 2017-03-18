@@ -40,9 +40,13 @@ public class Ship {
 
     /*
     * Decided to move these two functions because it can also apply to all ships in general.
-    * */
+    *
+    * From Chase: Hits and misses are tracked via an array in the BattleshipModel.
+    * Only Civilian ship needs these because they're the only kind of ship that
+    * gets destroyed in one shot.
+    **/
     // Accessors
-    public boolean getHit() { return isHit; }
+    //public boolean getHit() { return isHit; }
     //Mutators
-    public void setHit(boolean shot) { this.isHit = shot; }
+    //public void setHit(boolean shot) { this.isHit = shot; }
 }
