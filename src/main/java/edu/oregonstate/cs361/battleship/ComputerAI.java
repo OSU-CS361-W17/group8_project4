@@ -71,17 +71,9 @@ public class ComputerAI {
     * */
     public boolean levelOfDifficulty(boolean difficulty_hard) {
 
-        if(difficulty_hard) {
-
-
-            if() {
-                // then, it will try to sink the ship.
-            }
-
+        if (difficulty_hard) {
             return true;
-        } else if (!difficulty_hard) {
-            // The user is playing the game on easy mode.
-            return false;
         }
+        return false;
     };
 }

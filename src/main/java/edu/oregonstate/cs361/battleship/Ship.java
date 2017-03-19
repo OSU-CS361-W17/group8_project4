@@ -24,6 +24,7 @@ public class Ship {
     public int getLength() { return length; }
     public Point getStart() { return start; }
     public Point getEnd() { return end; }
+    public boolean getStealthMode() { return stealthMode; }
     public void setName(String name) {
         this.name = name;
     }
@@ -38,11 +39,13 @@ public class Ship {
     }
     public void setStealthMode(boolean mode) { this.stealthMode = mode; }
 
+
+
     /*
     * Decided to move these two functions because it can also apply to all ships in general.
     * */
     // Accessors
-    public boolean getHit() { return isHit; }
-    //Mutators
-    public void setHit(boolean shot) { this.isHit = shot; }
+//    public boolean getHit() { return isHit; }
+//    //Mutators
+//    public void setHit(boolean shot) { this.isHit = shot; }
 }
