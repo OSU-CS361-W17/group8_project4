@@ -16,6 +16,7 @@ class BattleshipModelTest {
         Point p = new Point(0,0);
         BattleshipModel b = new BattleshipModel();
         ArrayList<Point> al = new ArrayList<Point>();
+        ArrayList<Ship> al2 = new ArrayList<Ship>();
 
         Ship aircraftCarrier = new Ship("aircraftCarrier", 5, p, p);
         Ship battleship = new Ship("battleship", 4, p, p);
@@ -67,5 +68,13 @@ class BattleshipModelTest {
         assertEquals(al, b.getScanPos());
 
         assertEquals(true, b.scansAvailable());
+
+        al2.add(computer_aircraftCarrier);
+        b.addDestroyedComputerShip(computer_aircraftCarrier);
+        assertEquals(al2, b.getDestroyedComputerShips());
+        al2.remove(computer_aircraftCarrier);
+        al2.add(aircraftCarrier);
+        b.addDestroyedPlayerShip(aircraftCarrier);
+        assertEquals(al2, b.getDestroyedPlayerShips());
     }
 }
