@@ -8,6 +8,14 @@ $(document).ready(function() {
     });
 });
 
+function difficulty() {
+    $("div.modal").css("opacity", 0);
+    setTimeout(function() {
+        $("div.modal").css("display", "none");
+    }, 1200);
+    // Add difficulty() here
+}
+
 function placeShip() {
     // This ajax call will asnychonously call the back end, and tell it where to place the ship, then get back a game model with the ship placed, and display the new model.
     var request = $.ajax({
