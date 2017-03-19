@@ -30,6 +30,10 @@ public class BattleshipModel {
     private ArrayList<Point> scanMisses;
     private ArrayList<Point> scanPos;
 
+    // ArrayList: Destroyed Player & CPU Ships
+    private ArrayList<Ship> destroyedPlayerShips;
+    private ArrayList<Ship> destroyedComputerShips;
+
     // Constructor
     public BattleshipModel() {
         // Default start and end constructs
@@ -58,6 +62,8 @@ public class BattleshipModel {
         scanHits = new ArrayList<Point>();
         scanMisses = new ArrayList<Point>();
         scanPos = new ArrayList<Point>();
+        destroyedPlayerShips = new ArrayList<Ship>();
+        destroyedComputerShips = new ArrayList<Ship>();
     }
 
     // Accessor and Mutator
@@ -72,12 +78,14 @@ public class BattleshipModel {
     public Ship getComputer_clipper() { return computer_clipper; }
     public Ship getComputer_submarine() { return computer_submarine; }
     public ArrayList<Point> getPlayerHits() { return playerHits; }
-    public ArrayList<Point> getPlayermisses() { return playerMisses;}
+    public ArrayList<Point> getPlayerMisses() { return playerMisses;}
     public ArrayList<Point> getComputerHits() { return computerHits; }
-    public ArrayList<Point> getComputermisses() { return computerMisses; }
+    public ArrayList<Point> getComputerMisses() { return computerMisses; }
     public ArrayList<Point> getScanHits() { return scanHits; }
     public ArrayList<Point> getScanMisses() { return scanMisses; }
     public ArrayList<Point> getScanPos() { return scanPos; }
+    public ArrayList<Ship> getDestroyedPlayerShips() { return destroyedPlayerShips; }
+    public ArrayList<Ship> getDestroyedComputerShips() { return destroyedComputerShips; }
     public void setAircraftCarrier (Ship aircraftCarrier) { this.aircraftCarrier = aircraftCarrier; }
     public void setBattleship(Ship battleship) {
         this.battleship = battleship;
@@ -121,6 +129,8 @@ public class BattleshipModel {
     public void addScanPos(Point pos) {
         scanPos.add(pos);
     }
+    public void addDestroyedPlayerShip(Ship deadShip) { destroyedPlayerShips.add(deadShip); }
+    public void addDestroyedComputerShip(Ship deadShip) { destroyedComputerShips.add(deadShip); }
 
     // This function see if there are any scans available. If so, decrease the count by one and return true, else return false.
     public Boolean scansAvailable() {

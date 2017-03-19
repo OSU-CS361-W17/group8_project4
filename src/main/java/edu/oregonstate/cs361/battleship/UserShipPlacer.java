@@ -41,4 +41,9 @@ public class UserShipPlacer {
         }
         return userModel;
     }
+
+    public BattleshipModel getUserModel() { return userModel; }
+    public String getShipName() { return shipName; }
+    public Point getStart() { return start; }
+    public Point getEnd() { return end; }
 }

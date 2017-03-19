@@ -15,7 +15,7 @@ import static edu.oregonstate.cs361.battleship.Main.shipInfo;
 public class Utility {
 
 /*
-    This function accept an HTTP request and deserialize it into an actual Java object.
+    This function accepts an HTTP request and deserializes it into an actual Java object.
  */
     public static BattleshipModel getModelFromReq(Request req){
         Gson gson = new Gson();
