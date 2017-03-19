@@ -4,6 +4,48 @@ body {
     padding: 0;
 }
 
+div.modal {
+    position: fixed;
+    display:hidden;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    opacity:0.8;
+    transition: opacity 1s linear;
+}
+
+div.centerBox{
+    height:500px;
+    width:300px;
+    margin:20vh auto;
+}
+div.modal h1{
+    display:block;
+    float:left;
+    color:white;
+    font-family: Helvetica, sans-serif;
+    font-size: 50px;
+    transition: color 0.1s linear;
+}
+
+div.modal h1:hover{
+    color:red;
+}
+div.modal button{
+    background: rgba(0,0,0,0);
+    font-size: 75px;
+    float:left;
+    color:white;
+    margin: 10px auto;
+    width: 300px;
+    text-align:center;
+    border: 5px white solid;
+    transition: color 0.1s linear, border 0.1s linear;
+}
+div.modal button:hover{
+    color: #00ffcc;
+    border-color:#00ffcc;
+}
 .gameBoard{
 /*with:100px;
 height:100px;*/
