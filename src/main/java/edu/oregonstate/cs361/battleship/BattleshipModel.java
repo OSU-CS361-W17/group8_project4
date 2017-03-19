@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 public class BattleshipModel {
 
+    // difficulty level
+    private int difficulty;
+
+
     // User ships
     private Ship aircraftCarrier;
     private Ship battleship;
@@ -64,6 +68,10 @@ public class BattleshipModel {
         scanPos = new ArrayList<Point>();
         destroyedPlayerShips = new ArrayList<Ship>();
         destroyedComputerShips = new ArrayList<Ship>();
+
+        // creating difficulty level
+        difficulty = 0; // 1 is easy, 2 is hard.
+
     }
 
     // Accessor and Mutator
@@ -86,6 +94,8 @@ public class BattleshipModel {
     public ArrayList<Point> getScanPos() { return scanPos; }
     public ArrayList<Ship> getDestroyedPlayerShips() { return destroyedPlayerShips; }
     public ArrayList<Ship> getDestroyedComputerShips() { return destroyedComputerShips; }
+    public int getDifficulty() { return difficulty; }
+    public void setDifficulty(int difficulty) {this.difficulty = difficulty; };
     public void setAircraftCarrier (Ship aircraftCarrier) { this.aircraftCarrier = aircraftCarrier; }
     public void setBattleship(Ship battleship) {
         this.battleship = battleship;

@@ -52,5 +52,4 @@ public class Ship {
     //public boolean getHit() { return isHit; }
     //Mutators
     //public void setHit(boolean shot) { this.isHit = shot; }
-
 }

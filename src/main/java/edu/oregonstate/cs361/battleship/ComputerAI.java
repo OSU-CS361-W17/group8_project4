@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
+ * http://localhost:4567/
  * Created by jerry on 2/7/2017.
  * Recreated by mcwhirtc on March 18th, 2017.
  */
@@ -230,7 +231,6 @@ public class ComputerAI {
     //    cpuTargetFired = targetDeterminator();
     //    return cpuTargetFired;
     //}
-
 
     /*
     * computer begins with random choosing location to fire at on the players's board.
