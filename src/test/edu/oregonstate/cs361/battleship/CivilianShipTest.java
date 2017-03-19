@@ -32,25 +32,7 @@ class CivilianShipTest {
 
         assertEquals(true, s.getHit());
         assertEquals(p1, hits.get(0));
-        assertEquals(0, hits.get(1).getRow());
-        assertEquals(3, hits.get(1).getCol());
-        //assertEquals(mid, hits.get(1));
-        //assertEquals(p2, hits.get(2));
-
-
-        /*
-        //Fire f = new Fire(0, 0);  //Not sure how to do this call.
-        s.setHit(1);
-        if (s.getHit() == 1) { s.destroy(); }
-        assertEquals(1, s.hit);
-        assertEquals(0, s.health);
-        */
-        /*
-        if((i == 2) || (i == 3)) {
-            allCpuShips[i].setHit(1);
-            allCpuShips[i].destroy(userModel);
-        }
-        */
+        assertEquals(mid, hits.get(1));
+        assertEquals(p2, hits.get(2));
     }
-
 }

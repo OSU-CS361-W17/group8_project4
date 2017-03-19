@@ -7,7 +7,6 @@ public class BattleshipModel {
     // difficulty level
     private int difficulty;
 
-
     // User ships
     private Ship aircraftCarrier;
     private Ship battleship;
