@@ -15,8 +15,7 @@ class CivilianShipTest {
         Point p1 = new Point(0, 0);
         Point p2 = new Point(0, 2);
         Point mid = new Point(0, 1);
-        ArrayList<Point> hits;
-        hits = new ArrayList<Point>();
+        ArrayList<Point> hits = new ArrayList<Point>();
         CivilianShip s = new CivilianShip("civShip", 3, p1, p2, false);
         BattleshipModel b = new BattleshipModel();
 
@@ -35,6 +34,8 @@ class CivilianShipTest {
         assertEquals(p1, hits.get(0));
         assertEquals(mid, hits.get(1));
         assertEquals(p2, hits.get(2));
+
+
 
 
         /*

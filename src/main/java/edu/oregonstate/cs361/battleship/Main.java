@@ -52,11 +52,12 @@ public class Main {
     }
 
 
-    // This controller take a json object from the front end, and place the ship as requested, and then return the object.
+    // This controller takes a json object from the front end, and place the ship as requested, and then return the object.
     private static String placeShip(Request req) {
         Gson gson = new Gson();
         BattleshipModel userModel = Utility.getModelFromReq(req);
         String shipPlacementUrl = req.url();
+        System.out.println(shipPlacementUrl);
         // Pass into UserShipPlacer
         UserShipPlacer placeShipment = new UserShipPlacer(userModel, shipPlacementUrl);
         BattleshipModel newModel= placeShipment.placeBattleshipModel();

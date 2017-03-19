@@ -238,10 +238,11 @@ public class ComputerAI {
     * the computer must adhere to the player rules of battleship. the computer cannot "cheat"
     * by seeing the location of the player's bound or ship. These are the requirements of project 4.
     * */
+
     //public boolean levelOfDifficulty(boolean difficulty_hard) {
     //    if (difficulty_hard) {
             //if(1 == 1) {
-            ; // then, it will try to sink the ship.
+            //; // then, it will try to sink the ship.
             //}
 
     //        return true;
@@ -250,4 +251,5 @@ public class ComputerAI {
     //        return false;
     //    }
     //}
+
 }
