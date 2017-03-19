@@ -28,7 +28,7 @@ public class ComputerFire {
 	}
 
 	public BattleshipModel cpuFireBattleshipModel(ComputerAI ai) {
-		Point targetCpuFired = ai.fire();
+		Point targetCpuFired = ai.targetDeterminator(cpuModel);
 		for (int i = 0; i < numShips; i++) {
 			if (Utility.targetHit(allUserShips[i].getStart(), allUserShips[i].getEnd(), targetCpuFired)) {
 				//if((i == 2) || (i == 3)) {
