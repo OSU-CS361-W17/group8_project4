@@ -95,7 +95,7 @@ public class ComputerAI {
             adjCoords.add(temp);
         }
 
-        adjCoords = cleanAdjacencyList(adjCoords, cpuModel.getComputermisses(), injuredShips);
+        adjCoords = cleanAdjacencyList(adjCoords, cpuModel.getComputerMisses(), injuredShips);
 
         //An optimization could be inserted here to shoot in the path as the rest of the hits.
 
@@ -181,7 +181,7 @@ public class ComputerAI {
 
     private boolean fireOverlapChecker(BattleshipModel cpuModel, int row, int col) {
         ArrayList<Point> cpuHits = cpuModel.getComputerHits();
-        ArrayList<Point> cpuMisses = cpuModel.getComputermisses();
+        ArrayList<Point> cpuMisses = cpuModel.getComputerMisses();
 
         for(int i = 0; i < cpuHits.size(); i++) {
             if((row == cpuHits.get(i).getRow()) && (col == cpuHits.get(i).getCol())) {

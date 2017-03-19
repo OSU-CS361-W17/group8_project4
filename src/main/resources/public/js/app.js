@@ -2,18 +2,50 @@ var gameModel;
 
 //This function will be called once the page is loaded.  It will get a new game model from the back end, and display it.
 $(document).ready(function() {
+    $("#frontButton1").click(function(){
+        difficulty(1);
+    });
+    $("#frontButton2").click(function(){
+        difficulty(2);
+    });
     $.getJSON("model", function( json ) {
         displayGameState(json);
         gameModel = json;
     });
 });
 
-function difficulty() {
+
+
+function difficulty(diffLevel) {
     $("div.modal").css("opacity", 0);
     setTimeout(function() {
         $("div.modal").css("display", "none");
     }, 1200);
-    // Add difficulty() here
+    
+    var urlStr;
+    if (diffLevel == 1) {
+        urlStr = "/difficulty/easy";
+    }else{
+        urlStr = "/difficulty/hard";
+    }
+
+    var request = $.ajax ({
+        url: urlStr,
+        method: "post",
+        data: JSON.stringify(gameModel),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json"
+    });
+
+    request.done(function(currModel) {
+        displayGameState(currModel);
+        gameModel = currModel;
+    });
+
+    // If there is a problem, and the bck does not respond, then diplay error. 
+    request.fail(function(jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
 }
 
 function placeShip() {
@@ -82,26 +114,6 @@ function scan(){
     });
 }
 // This fucntion will set the difficulty of the game. 
-function difficulty() {
-    var request = $.ajax ({
-        url: "/difficulty/" + $("#difficulty").val();
-        method: "post",
-        data: JSON.stringify(gameModel),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json"
-    });
-
-    request.done(fucntion(currModel)) {
-        displayGameState(currModel);
-        gameModel = currModel;
-    }
-
-    // If there is a problem, and the bck does not respond, then diplay error. 
-    request.fail(function(jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
-    });
-
-}
 
 
 //This function will display the game model.  It displays the ships on the users board, and then shows where there have been hits and misses on both boards.

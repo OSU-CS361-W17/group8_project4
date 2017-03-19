@@ -20,6 +20,8 @@ public class Main {
         // This will listen to GET requests to /model and return a clean new model
         get("/model", (req, res) -> newModel());
 
+        // This will listen to POST request and expects to receive a game model, as well as difficulty setting.
+        post("/difficulty/:difficultyLevel", (req,res) -> difficulty(req, ai));
         // This will listen to POST requests and expects to receive a game model, as well as location to fire to
         post("/fire/:row/:col", (req, res) -> fireAt(req, ai));
 
@@ -29,9 +31,10 @@ public class Main {
         // This weill listen to POST requests and expects to receive a game model, as well as location to scan
         post("/scan/:row/:col", (req, res) -> scan(req, ai));
 
-        // This will listen to POST request and expects to receive a game model, as well as difficulty setting.
-        post("/difficulty/:hard", (req,res) -> difficulty(req, ai));
+
     }
+
+
     // This function initialize map for shipName and its length
     private static void createShipInfo(){
         // CAN BE MODIFIED
@@ -54,6 +57,20 @@ public class Main {
         return model;
     }
 
+    private static String difficulty(Request req, ComputerAI ai) {
+        Gson gson = new Gson();
+        BattleshipModel userModel = Utility.getModelFromReq(req);
+        String[] urlStr = req.url().split("/");
+        if(urlStr[4].equals("easy")) {
+            System.out.println("|" + urlStr[4] + "|");
+            userModel.setDifficulty(1);
+        }else{
+            userModel.setDifficulty(2);
+        }
+        // Implement the AI difficulty as you please.
+        String model = gson.toJson(userModel);
+        return model;
+    }
 
     // This controller takes a json object from the front end, and place the ship as requested, and then return the object.
     private static String placeShip(Request req) {
@@ -103,12 +120,5 @@ public class Main {
         return parsedNewModel;
     }
 
-    private static String difficulty(Request req, ComputerAI ai) {
-        Gson gson = new Gson;
-        BattleshipModel userModel = Utility.getModelFromReq(req);
-        String userScanUrl = req.url();
-
-
-    }
 }
 
