@@ -57,6 +57,15 @@ public class Main {
         return model;
     }
 
+    /**
+     * Chase: This model is consistent with placing ship functions
+     * and firing functions. It takes the request string and
+     * processes it to input difficulty into our BattleshipModel.
+     * It's better that it is done this way as to avoid coupling
+     * ComputerAI and main as much as possible. (Good job Bruce!
+     * My only criticism is that ComputerAI ai was passed for
+     * seemingly no reason. Maybe I'm missing it.)
+    **/
     private static String difficulty(Request req, ComputerAI ai) {
         Gson gson = new Gson();
         BattleshipModel userModel = Utility.getModelFromReq(req);
