@@ -69,7 +69,7 @@ public class ComputerAI {
     * the computer must adhere to the player rules of battleship. the computer cannot "cheat"
     * by seeing the location of the player's bound or ship. These are the requirements of project 4.
     * */
-    public boolean levelOfDifficulty(boolean difficulty_hard) {
+    /*public boolean levelOfDifficulty(boolean difficulty_hard) {
 
         if(difficulty_hard) {
 
@@ -83,5 +83,5 @@ public class ComputerAI {
             // The user is playing the game on easy mode.
             return false;
         }
-    };
+    };*/
 }
