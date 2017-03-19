@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 div.modal {
@@ -51,13 +52,22 @@ div.modal button:hover{
 height:100px;*/
 background-color: light-gray;
 }
+section#todoapp {
+    float:left;
+    width: 100%;
+}
 
 #MyBoard {
-    display: inline-block;
+    display: block;
+    margin-left: 50px;
+    float:left;
 }
 
 #TheirBoard {
-    display: inline-block;
+    float:left;
+    display: block;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .gameBoard td {
@@ -79,18 +89,37 @@ td:first-child, tr:first-child td{
 #MyBoard .ship{
     background-color: orange;
 }
+div#scanButtonArea {
+    display:block;
+    float:left;
+}
 /* bruce code */
 .redButtonFire{
     background-color: #f44336; /* Red */
     border: none;
     color: white;
-    padding: 30px 64px;
+    padding: 8px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px; 
 }
- 
+button.Scan{
+    background-color: white;
+    border: 3px solid teal;
+    color: teal;
+    padding: 8px 20px;
+    display:inline-block;
+    font-size: 20px;
+}
+button#place{
+    background-color: white;
+    border: 3px solid aquamarine;
+    color: gray;
+    padding: 8px 20px;
+    display:inline-block;
+    font-size: 20px;
+}
 
 /*
 button {
