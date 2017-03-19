@@ -14,8 +14,8 @@
 <div class = "modal">
     <div class = centerBox>
         <h1>BATTLESHIP</h1>
-        <button type = "button" onclick = "difficulty()">EASY</button>
-        <button type = "button" onclick = "difficulty()">HARD</button>
+        <button type = "button" id = "frontButton1">EASY</button>
+        <button type = "button" id = "frontButton2">HARD</button>
     </div>
 </div>
 <div id="ShipPlacement">
@@ -440,7 +440,9 @@
 		<select name="difficultyLevel">
 		  <option value="Easy">Easy</option>
 		  <option value="Hard">Hard</option>
-		</select>    	
+		</select>
+		<button type="button" onclick="difficulty()">Confirm</button>
+
     </div>
 
 

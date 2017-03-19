@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
+ * http://localhost:4567/
  * Created by jerry on 2/7/2017.
  * Recreated by mcwhirtc on March 18th, 2017.
  */
@@ -33,7 +34,7 @@ public class ComputerAI {
         ArrayList<Point> injuredShips;
         ArrayList<Point> adjacentSpots;
 
-        if(cpuHardDifficulty == true) {
+        if(cpuModel.getDifficulty() == 2) {
             //All hits that aren't associated with destroyed ships.
             injuredShips = hitLiveShipChecker(cpuModel);
 
@@ -74,6 +75,7 @@ public class ComputerAI {
         return cpuTargetFired;
     }
 
+    //Creates a list of literally every point adjacent(up, down, left, right) to every injured ship hit.
     private ArrayList<Point> listRelevantViableCoords(ArrayList<Point> injuredShips, BattleshipModel cpuModel) {
         ArrayList<Point> adjCoords = new ArrayList<Point>();
         Point temp;
@@ -101,6 +103,7 @@ public class ComputerAI {
         return adjCoords;
     }
 
+    //Removes points that are out bounds or that have already been missed/hit.
     private ArrayList<Point> cleanAdjacencyList(ArrayList<Point> dirtyAdjCoords, ArrayList<Point> misses, ArrayList<Point> hits) {
         ArrayList<Point> outOfBounds = new ArrayList<Point>();
         Point northwestBound = new Point(-1, -1);
@@ -147,6 +150,7 @@ public class ComputerAI {
         return dirtyAdjCoords;
     }
 
+    //Trims the hit list based on the list of dead ships.
     private ArrayList<Point> hitLiveShipChecker(BattleshipModel cpuModel) {
         ArrayList<Ship> deadShips = cpuModel.getDestroyedPlayerShips();
         ArrayList<Point> hits = cpuModel.getComputerHits();
@@ -178,6 +182,7 @@ public class ComputerAI {
         return hits;
     }
 
+    //Checks if the random coordinates have already been hit or missed.
     private boolean fireOverlapChecker(BattleshipModel cpuModel, int row, int col) {
         ArrayList<Point> cpuHits = cpuModel.getComputerHits();
         ArrayList<Point> cpuMisses = cpuModel.getComputerMisses();
@@ -197,3 +202,61 @@ public class ComputerAI {
         return false;
     }
 }
+
+/***************************
+******  OLD CODE!!!!  ******
+***************************/
+
+//Currently this AI will loop from left-top to every other space.
+// If statement for starting state at Point (0,0)
+//if (cpuFireRow == 0 && cpuFireCol == 0) {
+//    cpuFireCol += 2;
+//    return cpuTargetFired;
+//}
+
+//cpuTargetFired.setRow(cpuFireRow);
+//cpuTargetFired.setCol(cpuFireCol);
+//cpuFireCol += 2;
+//if (cpuFireCol > numCol) {
+//    cpuFireRow += 1;
+//    cpuFireCol -= numCol;
+//    if (numCol % 2 == 0) {
+//        if (cpuFireRow % 2 == 0){
+//            cpuFireCol += 1;
+//        }
+//        else {
+//            cpuFireCol -= 1;
+//        }
+//    }
+//}
+//if (cpuFireRow > numRow) {
+//    cpuFireRow -= numRow;
+//}
+//return cpuTargetFired;
+
+
+// When fire function is called, the AI targetDeterminator will be called
+//public Point fire() {
+//    cpuTargetFired = targetDeterminator();
+//    return cpuTargetFired;
+//}
+
+    /*
+    * computer begins with random choosing location to fire at on the players's board.
+    * if the computer hits a ship w/ its fire, then, it will try to sink the ship.
+    * the computer must adhere to the player rules of battleship. the computer cannot "cheat"
+    * by seeing the location of the player's bound or ship. These are the requirements of project 4.
+    * */
+
+//public boolean levelOfDifficulty(boolean difficulty_hard) {
+//    if (difficulty_hard) {
+//if(1 == 1) {
+//; // then, it will try to sink the ship.
+//}
+
+//        return true;
+//    } else if (!difficulty_hard) {
+// The user is playing the game on easy mode.
+//        return false;
+//    }
+//}
