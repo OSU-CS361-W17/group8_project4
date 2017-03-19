@@ -22,16 +22,4 @@ class PointTest {
         assertEquals(2, a.getRow());
     }
 
-//    @Test
-//    public void getCol() {
-//        Point a = new Point(0,0);
-//        assertEquals(0, a.getDown());
-//    }
-//
-//    @Test
-//    public void getRow() {
-//        Point a = new Point(0,0);
-//        assertEquals(0, a.getAcross());
-//    }
-
 }

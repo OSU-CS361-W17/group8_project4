@@ -72,9 +72,9 @@ public class BattleshipModel {
     public Ship getComputer_clipper() { return computer_clipper; }
     public Ship getComputer_submarine() { return computer_submarine; }
     public ArrayList<Point> getPlayerHits() { return playerHits; }
-    public ArrayList<Point> getPlayermisses() { return playerMisses;}
+    public ArrayList<Point> getPlayerMisses() { return playerMisses;}
     public ArrayList<Point> getComputerHits() { return computerHits; }
-    public ArrayList<Point> getComputermisses() { return computerMisses; }
+    public ArrayList<Point> getComputerMisses() { return computerMisses; }
     public ArrayList<Point> getScanHits() { return scanHits; }
     public ArrayList<Point> getScanMisses() { return scanMisses; }
     public ArrayList<Point> getScanPos() { return scanPos; }
