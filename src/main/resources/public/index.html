@@ -59,7 +59,7 @@
         <option value="horizontal">horizontal</option>
         <option value="vertical">vertical</option>
     </select>
-    <button type="button" onclick="placeShip()">Place</button>
+    <button type="button" id = "place" onclick="placeShip()">Place</button>
 </div>
 
 <section id="todoapp" ic-target="this">
@@ -214,13 +214,6 @@
     </div>
     <!--<BR><BR><BR>-->
 	
-	<!-- A really simply section for Chase's code. -->
-	<div>
-		<table>
-			<h2> Destroyed Ships </h2>
-			<th> BLANK </th>
-		</table>
-	</div>
     
     <div id="TheirBoard" class="gameBoard">
         <H1>Theirs</H1>
@@ -370,7 +363,13 @@
             </tr>
         </table>
     </div>
-
+    <!-- A really simply section for Chase's code. -->
+	<div>
+		<table>
+			<h2> Destroyed Ships </h2>
+			<th> BLANK </th>
+		</table>
+	</div>
     
     <div id="AircraftcarrierDiv">
         <h1>Fire:</h1>
@@ -432,17 +431,6 @@
             <option value="10">10</option>
         </select>
         <button class="Scan" type="button" onclick="scan()">Scan</button>
-    </div>
-
-    <h1>Level Of Difficulty:</h1>
-    <div>
-    	Difficulty:
-		<select name="difficultyLevel">
-		  <option value="Easy">Easy</option>
-		  <option value="Hard">Hard</option>
-		</select>
-		<button type="button" onclick="difficulty()">Confirm</button>
-
     </div>
 
 
