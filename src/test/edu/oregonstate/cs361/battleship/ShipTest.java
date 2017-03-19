@@ -10,11 +10,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShipTest {
     @Test
     public void testShip() {
-        Point p = new Point(0, 0);
-        Ship s = new Ship("cheese", 5, p, p);
-        assertEquals("cheese", s.getName());
-        assertEquals(5, s.getLength());
-        assertEquals(p, s.getStart());
-        assertEquals(p, s.getEnd());
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(1, 1);
+        Ship s = new Ship("cheese", 5, p1, p1);
+
+        s.setName("bobby");
+        assertEquals("bobby", s.getName());
+        s.setLength(4);
+        assertEquals(4, s.getLength());
+        s.setStart(p2);
+        assertEquals(p2, s.getStart());
+        s.setEnd(p2);
+        assertEquals(p2, s.getEnd());
+        s.setStealthMode(true);
+        assertEquals(true, s.getStealthMode());
     }
 }
