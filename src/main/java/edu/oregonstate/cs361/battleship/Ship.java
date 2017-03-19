@@ -42,7 +42,7 @@ public class Ship {
     * Decided to move these two functions because it can also apply to all ships in general.
     * */
     // Accessors
-    public boolean getHit() { return isHit; }
+    //public boolean getHit() { return isHit; }
     //Mutators
-    public void setHit(boolean shot) { this.isHit = shot; }
+    //public void setHit(boolean shot) { this.isHit = shot; }
 }

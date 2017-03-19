@@ -73,6 +73,28 @@ function scan(){
         alert( "Request failed: " + textStatus );
     });
 }
+// This fucntion will set the difficulty of the game. 
+function difficulty() {
+    var request = $.ajax ({
+        url: "/difficulty/" + $("#difficulty").val();
+        method: "post",
+        data: JSON.stringify(gameModel),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json"
+    });
+
+    request.done(fucntion(currModel)) {
+        displayGameState(currModel);
+        gameModel = currModel;
+    }
+
+    // If there is a problem, and the bck does not respond, then diplay error. 
+    request.fail(function(jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
+
+}
+
 
 //This function will display the game model.  It displays the ships on the users board, and then shows where there have been hits and misses on both boards.
 function displayGameState(gameModel){
